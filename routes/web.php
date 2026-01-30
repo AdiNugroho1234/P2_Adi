@@ -9,3 +9,11 @@ Route::get('/', function () {
 Route::get('/register', function () {
     return view('register');
 })->name('register');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
+Route::get('/form', function () {
+    return view('form');
+})->name('form');
