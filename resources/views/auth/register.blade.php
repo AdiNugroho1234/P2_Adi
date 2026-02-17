@@ -1,27 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
-
-<!-- Mirrored from themesbrand.com/lexa-mvc5/layouts/pages-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 14 Jan 2026 08:17:54 GMT -->
-
 <head>
-
-    <meta charset="utf-8" />
-    <title>Login | Lexa - Admin & Dashboard Template</title>
+    <meta charset="utf-8">
+    <title>Register | Adixiiweb</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-    <meta content="Themesbrand" name="author" />
-    <!-- App favicon -->
-    <link rel="shortcut icon" href="/assets/images/favicon.ico">
+    <meta name="description" content="Login Page">
+    <meta name="author" content="Themesbrand">
 
-    <!-- Bootstrap Css -->
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ asset('assets/images/favicon.ico') }}">
+
+    <!-- Bootstrap CSS -->
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet">
-    <!-- Icons Css -->
+
+    <!-- Icons -->
     <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet">
-    <!-- App Css -->
+
+    <!-- App CSS -->
     <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet">
-
-
 </head>
 
 <body>
@@ -40,21 +37,30 @@
                             <div class="p-3">
                                 <h4 class="text-muted font-size-18 mb-1 text-center">Free Register</h4>
                                 <p class="text-muted text-center">Get your free Lexa account now.</p>
-                                <form class="form-horizontal mt-4" action="https://themesbrand.com/lexa-mvc5/layouts/index.html">
-
+                                <form class="form-horizontal mt-4" action="{{route('register')}}" method="POST">
+                                    @csrf
                                     <div class="mb-3">
-                                        <label for="useremail">Email</label>
-                                        <input type="email" class="form-control" id="useremail" placeholder="Enter email">
+                                        <label for="useremail">Username</label>
+                                        <input type="text" name="name" class="form-control"
+                                            value="{{ old('name') }}" placeholder="Name" />
                                     </div>
 
                                     <div class="mb-3">
-                                        <label for="username">Username</label>
-                                        <input type="text" class="form-control" id="username" placeholder="Enter username">
+                                        <label for="username">Email</label>
+                                        <input type="email" name="email" class="form-control"
+                                            value="{{ old('email') }}" placeholder="Email Address" />
                                     </div>
 
                                     <div class="mb-3">
                                         <label for="userpassword">Password</label>
-                                        <input type="password" class="form-control" id="userpassword" placeholder="Enter password">
+                                        <input type="password" name="password" class="form-control"
+                                            placeholder="Password" />
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="userpassword">Confirm Password</label>
+                                        <input type="password" name="password_confirmation" class="form-control"
+                                            placeholder="Confirm Password" />
                                     </div>
 
                                     <div class="mb-3 row mt-4">
@@ -84,16 +90,14 @@
     </div>
 
     <!-- JAVASCRIPT -->
-    <script src="{{ asset('assets/libs/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('assets/libs/metismenu/metisMenu.min.js') }}"></script>
-    <script src="{{ asset('assets/libs/simplebar/simplebar.min.js') }}"></script>
-    <script src="{{ asset('assets/libs/node-waves/waves.min.js') }}"></script>
-    <script src="{{ asset('assets/js/app.js') }}"></script>
-
+    <script src="assets/libs/jquery/jquery.min.js"></script>
+    <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/libs/metismenu/metisMenu.min.js"></script>
+    <script src="assets/libs/simplebar/simplebar.min.js"></script>
+    <script src="assets/libs/node-waves/waves.min.js"></script>
+    <script src="assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script>
+    <!-- App js -->
+    <script src="assets/js/app.js"></script>
 </body>
-
-
-<!-- Mirrored from themesbrand.com/lexa-mvc5/layouts/pages-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 14 Jan 2026 08:17:54 GMT -->
 
 </html>
